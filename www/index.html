@@ -18,10 +18,12 @@
                 <p class="event received">Tout est prêt pour fonctionner</p>
             </div>
             <form id="LeForm" name="test" action="Page.html" method="get">
+            <input type="hidden" name="A" value="test" /></p>
             <p><input type="text" name="Nom" size="40" required /></p>
             <p><input type="submit" value="Entrer"/></p>
+            <p><input type="button" value="Quitter" onClick="CloseApp()"/></p>
             </form>
-            <div id="result">coucou</div>
+            <div id="result"></div>
         </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

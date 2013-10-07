@@ -48,3 +48,6 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+function CloseApp() {
+	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
+}
