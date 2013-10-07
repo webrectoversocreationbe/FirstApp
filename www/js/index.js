@@ -44,10 +44,12 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-		$('#Nom').val($('#A').val());
         console.log('Received Event: ' + id);
     }
 };
+$(document).on("pageinit", "#Nom", function () {
+	$('#Nom').val($('#A').val());
+});
 function CloseApp() {
 	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
 }
