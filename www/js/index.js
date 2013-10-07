@@ -34,24 +34,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-			$.ajax({
-			  type: 'GET', // Le type de ma requete
-			  url: 'http://www.candicar.eu/Prod/ajaxPhoneGap.php', // L'url vers laquelle la requete sera envoyee
-			  data: {
-				username: 'OyoKooN', // Les donnees que l'on souhaite envoyer au serveur au format JSON
-				age: 19,
-				admin: true
-			  }, 
-			  success: function(data, textStatus, jqXHR) {
-				// La reponse du serveur est contenu dans data
-				// On peut faire ce qu'on veut avec ici
-				$('#result').append(data);
-			  },
-			  error: function(jqXHR, textStatus, errorThrown) {
-				// Une erreur s'est produite lors de la requete
-				$('#result').append('<p>erreur</p>');
-			  }
-			});
+		alert('ici');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
