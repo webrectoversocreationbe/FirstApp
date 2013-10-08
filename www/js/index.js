@@ -8,6 +8,7 @@ var app = {
         document.addEventListener('online', this.onOnline, false);
     },
     onDeviceReady: function() {
+		$.support.cors = true;
         app.receivedEvent('deviceready');
     },
     onOffline: function() {
