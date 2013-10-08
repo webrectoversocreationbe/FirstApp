@@ -11,6 +11,7 @@
     <script src="js/jquery.mobile.config.js"></script>
     <script src="js/jquery.mobile-1.3.0.min.js"></script>
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
 </head>
 <body>
     <div data-role="page" id="page" data-theme="a">
@@ -18,17 +19,18 @@
             <h1>Business Advices</h1>
         </div>
         <div data-role="content" id="content" data-theme="a">
-            <div id="cnType"></div>
+        	<div id="Menu">
             <form name="test" action="#" method="post">
             <input type="hidden" name="A" id="A" value="test"/>
-            <input type="button" value="essai" onClick="ShowA()"/>
+            <input type="button" value="Les produits" onClick="ShowProduits()"/>
             </form>
+            </div>
+            <div id="Produits">
+            </div>
         </div>
         <div data-role="footer" id="footer" data-position="fixed" data-theme="a">
-                <p>&copy; 2013 Business Advices</p>
+                <p>&copy; 2013 Business Advices - <div id="cnType"></div></p>
         </div>
     </div>
-    <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

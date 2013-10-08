@@ -31,8 +31,8 @@ var app = {
     }
 };
 app.initialize();
-function ShowA() {
-	alert($('#A').val());
+function CloseApp() {
+	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
 }
 function check_network() {
     var networkState = navigator.network.connection.type;
@@ -44,8 +44,8 @@ function check_network() {
     states[Connection.CELL_3G]  = '3G';
     states[Connection.CELL_4G]  = '4G';
     states[Connection.NONE]     = 'Non connecté';
-    document.getElementById('cnType').innerHTML = states[networkState];
+    document.getElementById('cnType').innerHTML = '<span class="'+states[networkState]=='Non connecté'?'rouge':'vert'+'">'+states[networkState]+'</span>';
 }
-function CloseApp() {
-	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
+function ShowProduits() {
+	$('#Produits').html('les produits');
 }
