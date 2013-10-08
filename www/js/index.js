@@ -59,9 +59,9 @@ function ShowProduits() {
 		url: "http://www.candicar.eu/Prod/ajaxPhoneGap.php",
         crossDomain: true,
 		dataType: "html",
-		success: function(Ret) {
-			$('#Produits').append(Ret);
-			alert('ok');
+		success: function(response) {
+			$('#Produits').html(response);
+			alert(response);
 		},
 		error: function() {
 			$('#Produits').append('Une erreur est survenue');
