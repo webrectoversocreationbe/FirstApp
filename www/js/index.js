@@ -21,6 +21,12 @@ var app = {
 		case 'deviceready':
 			check_network();
 			break;
+		case 'offline':
+			check_network();
+			break;
+		case 'online':
+			check_network();
+			break;
 		}
     }
 };
