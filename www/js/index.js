@@ -47,5 +47,12 @@ function check_network() {
     document.getElementById('cnType').innerHTML = '<span class="'+states[networkState]=='Non connecté'?'rouge':'vert'+'">'+states[networkState]+'</span>';
 }
 function ShowProduits() {
-	$('#Produits').html('les produits');
+	$.ajax({
+		type: "POST",
+		url: "http://www.candicar.eu/Prod/ajaxPhoneGap.php",
+		data: "name=John&location=Boston",
+		success: function(Ret) {
+			$('#Produits').html(Ret);
+		}
+	});	
 }
