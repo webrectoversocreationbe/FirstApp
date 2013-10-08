@@ -44,17 +44,24 @@ function check_network() {
     states[Connection.CELL_3G]  = '3G';
     states[Connection.CELL_4G]  = '4G';
     states[Connection.NONE]     = 'Non connecté';
-    document.getElementById('cnType').innerHTML = '<span class="'+states[networkState]=='Non connecté'?'rouge':'vert'+'">'+states[networkState]+'</span>';
+    $('#cnType').html(states[networkState]);
+	if (states[networkState]=='Non connecté') {
+		$('#cnType').removeClass('vert');
+		$('#cnType').addClass('rouge');
+	} else {
+		$('#cnType').removeClass('rouge');
+		$('#cnType').addClass('vert');
+	}
 }
 function ShowProduits() {
 	$.ajax({
 		type: "POST",
 		url: "http://www.candicar.eu/Prod/ajaxPhoneGap.php",
-		data: "name=John&location=Boston",
+		dataType: "html",
 		success: function(Ret) {
 			$('#Produits').append(Ret);
 		},
-		error: function(Ret) {
+		error: function() {
 			$('#Produits').append('Une erreur est survenue');
 		}
 	});	
