@@ -61,6 +61,6 @@
 
 	<gap:platform name="android" />
 	
-	<access origin="*" />
+	<access origin="*" subdomains="true" />
 
 </widget>
