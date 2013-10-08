@@ -45,11 +45,9 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+		alert($('#A').val());
     }
 };
-$('#PageHome').live('pageinit',function(){
-	alert('ici');
-});
 function CloseApp() {
 	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
 }
