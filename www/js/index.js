@@ -57,12 +57,15 @@ function ShowProduits() {
 	$.ajax({
 		type: "POST",
 		url: "http://www.candicar.eu/Prod/ajaxPhoneGap.php",
+        crossDomain: true,
 		dataType: "html",
 		success: function(Ret) {
 			$('#Produits').append(Ret);
+			alert('ok');
 		},
 		error: function() {
 			$('#Produits').append('Une erreur est survenue');
+			alert('nok');
 		}
 	});	
 }
