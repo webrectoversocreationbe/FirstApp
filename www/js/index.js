@@ -62,6 +62,7 @@ function check_network() {
     states[Connection.NONE]     = 'No network connection';
 
     document.getElementById('cnType').innerHTML = states[networkState];
+	alert(states[networkState]);
 }
 function CloseApp() {
 	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
