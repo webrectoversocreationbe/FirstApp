@@ -47,8 +47,8 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-$(document).on("pageinit", "#Nom", function () {
-	$('#Nom').val($('#A').val());
+$('#PageHome').live('pageinit',function(){
+	alert('ici');
 });
 function CloseApp() {
 	if(navigator.app) {navigator.app.exitApp();} else if (navigator.device) {navigator.device.exitApp();}
