@@ -52,7 +52,10 @@ function ShowProduits() {
 		url: "http://www.candicar.eu/Prod/ajaxPhoneGap.php",
 		data: "name=John&location=Boston",
 		success: function(Ret) {
-			$('#Produits').html(Ret);
+			$('#Produits').append(Ret);
+		},
+		error: function(Ret) {
+			$('#Produits').append('Une erreur est survenue');
 		}
 	});	
 }
