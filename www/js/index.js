@@ -31,6 +31,9 @@ var app = {
     }
 };
 app.initialize();
+function ShowA() {
+	alert($('#A').val());
+}
 function check_network() {
     var networkState = navigator.network.connection.type;
     var states = {};
