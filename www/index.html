@@ -34,7 +34,7 @@
             <IFRAME src="http://docs.phonegap.com" width="500" height="200" scrolling="auto" frameborder="1"></IFRAME>
             <div class="sigPad">
               <div class="sigWrapper">
-                <canvas class="pad" style="background:#9FC;" width="300" height="255"></canvas>
+                <canvas class="pad" width="300" height="255"></canvas>
               </div>
             </div>
 
@@ -46,7 +46,7 @@
     </div>
     <script>
 		$(document).ready(function () {
-		  $('.sigPad').signaturePad({drawOnly:true,lineColour:'#fff'});
+		  $('.sigPad').signaturePad({drawOnly:true,bgColour:'#f00',lineColour:'#fff'});
 		});
 	</script>
 </body>
