@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
+        id        = "be.rectoversocreation.firstapp"
         version   = "1.0.0">
 
     <name>Business Advices</name>
@@ -12,11 +12,11 @@
         Test d'application.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
+    <author href="http://www.rectoversocreation.be" email="web@rectoversocreation.be">
         Business Advices
     </author>
 
-	<access origin="*.*" subdomains="true" />
+	<access origin="*" subdomains="true" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
@@ -30,7 +30,7 @@
 	<feature name="http://api.phonegap.com/1.0/media"/>
     -->
 	<preference name="target-device" 			  value="universal" />
-    <preference name="phonegap-version"           value="3.0.0" />          <!-- all: current version of PhoneGap -->
+    <preference name="phonegap-version"           value="3.1.0" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
