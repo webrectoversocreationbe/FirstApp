@@ -16,6 +16,8 @@
         Business Advices
     </author>
 
+	<access origin="*.*" subdomains="true" />
+
     <feature name="http://api.phonegap.com/1.0/device" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
 	<feature name="http://api.phonegap.com/1.0/battery"/>
@@ -61,6 +63,5 @@
 
 	<gap:platform name="android" />
 	
-	<access origin="*" subdomains="true" />
 
 </widget>
