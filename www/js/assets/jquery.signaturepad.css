@@ -1,8 +1,8 @@
+
 .sigPad {
   margin: 0;
   padding: 0;
-  width: 301px;
-  border:1px solid #000;
+  width: 300px;
 }
 
 .sigPad label {
@@ -140,9 +140,7 @@
 
 .pad {
   position: relative;
-}
 
-.current .pad {
   /**
    * For cross browser compatibility, this should be an absolute URL
    * In IE the cursor is relative to the HTML document
