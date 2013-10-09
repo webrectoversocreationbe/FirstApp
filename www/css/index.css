@@ -58,6 +58,6 @@ p {
 	line-height:20px;
     font-weight:normal;
     margin:0px;
-    overflow:visible;
+	color:#333;
 }
 #Menu {width:80%; margin:0 auto;}
