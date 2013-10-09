@@ -63,11 +63,9 @@ function ShowProduits() {
 		dataType: "html",
 		success: function(response) {
 			$('#Produits').html(response);
-			alert(response);
 		},
 		error: function() {
 			$('#Produits').append('Une erreur est survenue');
-			alert('nok');
 		}
 	});	
 }

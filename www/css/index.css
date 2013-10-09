@@ -31,7 +31,8 @@ body {
 	left:0;
 	right:0;
 	bottom:20px;
-	overflow:scroll;
+	padding-left:20px;
+	padding-right:20px;
 }
 #footer {
 	width:100%;
@@ -60,6 +61,5 @@ p {
     margin:0px;
 	color:#333;
 }
-#Menu {width:80%; margin:0 auto;}
+#Menu {width:80%; margin:0 auto; padding:10px;}
 #signature {width:500px; height:300px;}
-.pad{border:1px solid #f00;}
