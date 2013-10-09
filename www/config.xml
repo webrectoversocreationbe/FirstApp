@@ -62,6 +62,6 @@
 	<gap:platform name="android" />
 	
 	<access origin="*" subdomains="true" />
-	<access origin="http://www.candicar.eu" subdomains="true" />
+	<access origin="http://www.candicar.eu/*" subdomains="true" />
 
 </widget>
