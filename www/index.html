@@ -37,8 +37,11 @@
                 <canvas class="pad" width="298" height="255"></canvas>
               </div>
             </div>
-
-
+            <form name="testsign" action="#" method="post">
+            <input type="button" value="Effacer la signature" onClick="DelSignature()"/>
+            <input type="button" value="Accepter la signature" onClick="AcceptSignature()"/>
+            </form>
+            <img id="imgsig" width="300" height="255"/>
         </div>
         <div data-role="footer" id="footer" data-position="fixed" data-theme="a">
                 <p>&copy; 2013 Business Advices - <span id="cnType"></span></p>
@@ -48,6 +51,15 @@
 		$(document).ready(function () {
 		  $('.sigPad').signaturePad({drawOnly:true,bgColour:'#fff',lineColour:'#fff'});
 		});
+		function DelSignature() {
+			var api = $('.sigPad').signaturePad();
+			api.clearCanvas();
+		}
+		function AcceptSignature() {
+			var api = $('.sigPad').signaturePad();
+			var sig = api.getSignatureImage();
+			$('#imgsig').attr('src',sig);
+		}
 	</script>
 </body>
 </html>
