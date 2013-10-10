@@ -5,6 +5,7 @@ window.dao =  {
     initialize: function(callback) {
         var self = this;
         this.db = window.openDatabase("syncdemodb", "1.0", "Sync Demo DB", 200000);
+		alert('ici');
 
         // Testing if the table exists is not needed and is here for logging purpose only. We can invoke createTable
         // no matter what. The 'IF NOT EXISTS' clause will make sure the CREATE statement is issued only if the table
