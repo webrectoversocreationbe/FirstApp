@@ -247,13 +247,14 @@ p {
     margin:0px;
 	color:#333;
 }
-#Menu {width:80%; margin:0 auto; padding:10px; text-align:center;}
-#Menu input {margin-right:20px; width:200px;}
-#Menu input:last-child {margin-right:0px;}
+#header h1 {text-align:center;}
+#Menu {width:100%; margin:0 auto; padding:10px; text-align:center;}
+#Menu input,.btn {margin-right:20px; width:200px; padding:10px;}
+#Menu input:last-child,.btn:last-child {margin-right:0px;}
 #Signature {margin:5px 0px 10px 0px;}
 #Prenom {width:500px;}
 #Nom {width:500px;}
 #Adresse {width:500px;}
 #CP {width:500px;}
 #Ville {width:500px;}
-#Produits {width:500px;}
+#Produits {width:500px; height:200px;}

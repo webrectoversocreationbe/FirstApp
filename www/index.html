@@ -38,7 +38,13 @@
             <h2>Articles</h2>
             <p><select name="Produit" size="10" id="Produits"></select></p>
             <h2>Commande</h2>
-            <table><tr><th>Article</th><th>Description</th></tr><tr><td>123</td><td>Essai d'article</td></tr></table>
+            <table>
+            <tr><th width="50">Article</th><th>Description</th><th width="150">Prix</th></tr>
+            <tr><td>123</td><td>Article 123</td><td align="right">321 €</td></tr>
+            <tr><td>456</td><td>Article 456</td><td align="right">211 €</td></tr>
+            <tr><td>789</td><td>Article 789</td><td align="right">1.321 €</td></tr>
+            <tr><td colspan="2" align="right" bgcolor="#FFFFFF">Total : </td><td align="right">1.653 €</td></tr>
+            </table>
             <h2>Signature du client</h2>
             </form>
             <div id="Signature">
@@ -48,9 +54,9 @@
                   </div>
                 </div>
             </div>
-            <form name="testsign" action="#" method="post">
-            <input type="button" value="Effacer la signature" onClick="DelSignature()"/>
-            <input type="button" value="Accepter le bon de commande" onClick="AcceptCDE()"/>
+            <form name="frmOk" action="#" method="post">
+            <input class="btn" type="button" value="Effacer la signature" onClick="DelSignature()"/>
+            <input class="btn" type="button" value="Accepter le bon de commande" onClick="AcceptCDE()"/>
             </form>
         </div>
         <div data-role="footer" id="footer" data-position="fixed" data-theme="a">
