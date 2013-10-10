@@ -10,6 +10,7 @@
 <!--[if lt IE 9]><script src="js/assets/flashcanvas.js"></script><![endif]-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/articles.js"></script>
     <script src="js/jquery.signaturepad.js"></script>
     <script src="js/assets/json2.min.js"></script>
     <script type="text/javascript" src="phonegap.js"></script>
@@ -22,21 +23,29 @@
         <div id="content">
         	<div id="Menu">
             <form name="frmSynchro" action="#" method="post">
-            <input type="button" value="Synchroniser les produits" onClick=""/>
+            <input id="sync" type="button" value="Synchroniser les produits" onClick=""/>
             <input type="button" value="Synchroniser les commandes" onClick=""/>
             <input type="button" value="Nouveau bon de commande" onClick=""/>
+            <input type="button" value="Liste des commandes" onClick=""/>
             </form>
             </div>
-            <div id="Produits"></div>
             <form name="frmBonCde" action="#" method="post">
             <h2>Client</h2>
+            <div class="floatleft">
             <p><label for="Prenom">Prénom :</label><br/><input type="text" name="Prenom" id="Prenom" required/></p>
             <p><label for="nom">Nom :</label><br/><input type="text" name="Nom" id="Nom" required/></p>
             <p><label for="Adresse">Adresse :</label><br/><input type="text" name="Adresse" id="Adresse" required/></p>
             <p><label for="CP">Code postal :</label><br/><input type="text" name="CP" id="CP" required/></p>
             <p><label for="Ville">Ville :</label><br/><input type="text" name="Ville" id="Ville" required/></p>
+            </div>
+            <div class="floatleft ML20">
+            <div id="#log"></div>
+            <input type="button" id="clearlog" value="effacer le log"/>
+            </div>
+            <div class="clear"></div>
             <h2>Articles</h2>
             <p><select name="Produit" size="10" id="Produits"></select></p>
+            <p><input type="button" value="Ajouter" onClick=""/></p>
             <h2>Commande</h2>
             <table>
             <tr><th width="50">Article</th><th>Description</th><th width="150">Prix</th></tr>
@@ -50,7 +59,7 @@
             <div id="Signature">
                 <div class="sigPad" style="position:relative;">
                   <div class="sigWrapper">
-                    <canvas class="pad" width="298" height="255"></canvas>
+                    <canvas class="pad" width="1010" height="255"></canvas>
                   </div>
                 </div>
             </div>

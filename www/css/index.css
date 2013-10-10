@@ -157,7 +157,7 @@ input[type="text"],input[type="password"],input[type="email"],input[type="file"]
 	font-size:12px;
 }
 input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="file"]:focus,input[type="tel"]:focus,textarea:focus, select:focus {
-	border:1px solid #ea6113;
+	border:1px solid #222;
 	background:#FFFDFB;
 }
 input[type="text"]:invalid,input[type="password"]:invalid,input[type="email"]:invalid,input[type="file"]:invalid,input[type="tel"]:invalid,textarea:invalid, select:invalid {
@@ -198,17 +198,15 @@ body {
 	line-height:40px;
     text-align:center;
 	vertical-align:middle;
-	position:fixed;
-	top:0; left:0; right:0;
 	background:#CCC;
 }
 #content {
 	background:#FFF;
-	padding-top:40px;
+	padding-top:10px;
 	padding-bottom:40px;
 	padding-left:20px;
 	padding-right:20px;
-	width:80%;
+	width:90%;
 	margin:0 auto;
 }
 #footer {
@@ -247,7 +245,7 @@ p {
     margin:0px;
 	color:#333;
 }
-#header h1 {text-align:center;}
+#header h1 {text-align:center; padding-top:5px;}
 #Menu {width:100%; margin:0 auto; padding:10px; text-align:center;}
 #Menu input,.btn {margin-right:20px; width:200px; padding:10px;}
 #Menu input:last-child,.btn:last-child {margin-right:0px;}
@@ -257,4 +255,4 @@ p {
 #Adresse {width:500px;}
 #CP {width:500px;}
 #Ville {width:500px;}
-#Produits {width:500px; height:200px;}
+#Produits {width:100%; height:200px;}
