@@ -185,13 +185,21 @@ window.dao =  {
 
 function renderList(articles) {
     log('Rendering list using local SQLite data...');
+	var select = $('#Produits');
+	if(select.prop) {
+	  var options = select.prop('options');
+	}
+	else {
+	  var options = select.attr('options');
+	}
+	$('option', select).remove();
     dao.findAll(function(articles) {
         $('#list').empty();
         var l = articles.length;
         for (var i = 0; i < l; i++) {
             var article = articles[i];
-			var options = $('#Produits').attr('options');
-			options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num, true, true);
+			
+			options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num);
 
 //            $('#Produits').append(
   //              '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
