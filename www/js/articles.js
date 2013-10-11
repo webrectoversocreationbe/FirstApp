@@ -163,14 +163,6 @@ window.dao =  {
     }
 };
 
-
-/*$('#reset').on('click', function() {
-    dao.dropTable(function() {
-       dao.createTable();
-    });
-});*/
-
-
 function renderList(articles) {
     log('Rendering list using local SQLite data...');
 	var select = $('#Produits');
@@ -182,12 +174,12 @@ function renderList(articles) {
 	}
 	$('option', select).remove();
     dao.findAll(function(articles) {
-        $('#list').empty();
+        $('#Produits').empty();
         var l = articles.length;
         for (var i = 0; i < l; i++) {
             var article = articles[i];
 			if (article.bDel==0) {
-				options[options.length] = new Option(article.Id + ' - ' + article.Description + ' - ' + article.Prix + ' €', article.Num);
+				options[options.length] = new Option(article.Id + ' - ' + article.Description + ' - ' + article.Prix.toString() + ' €', article.Num);
 			}
         }
     });

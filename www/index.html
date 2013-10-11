@@ -24,7 +24,7 @@
         	<div id="Menu">
             <form name="frmSynchro" action="#" method="post">
             <input id="sync" type="button" value="Synchroniser les produits" onClick=""/>
-            <input type="button" value="Synchroniser les commandes" onClick=""/>
+            <input id="reset" type="button" value="Synchroniser les commandes" onClick=""/>
             <input type="button" value="Nouveau bon de commande" onClick=""/>
             <input type="button" value="Liste des commandes" onClick=""/>
             </form>
@@ -84,6 +84,11 @@
 				Synchronise();
 			});
 			
+			$('#reset').on('click', function() {
+				dao.dropTable(function() {
+				   dao.createTable();
+				});
+			});
 			/*$('#render').on('click', function() {
 				renderList();
 			});*/
