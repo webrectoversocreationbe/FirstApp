@@ -85,7 +85,7 @@ window.dao =  {
                         for (; i < len; i = i + 1) {
                             articles[i] = results.rows.item(i);
             var article = articles[i];
-			alert(i);
+			alert(article.Description);
             $('#Produits').append(
                 '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
                         }
@@ -187,13 +187,12 @@ window.dao =  {
 function renderList(articles) {
     log('Rendering list using local SQLite data...');
     dao.findAll(function(articles) {
-		alert('ici');
         $('#list').empty();
         var l = articles.length;alert(l);
         for (var i = 0; i < l; i++) {
             var article = articles[i];
             $('#Produits').append(
-                '<option value="' + article.Num + '">' + article.id + ' - ' + article.Description + '</option>');
+                '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
         }
     });
 }
