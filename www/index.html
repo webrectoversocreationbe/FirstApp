@@ -45,8 +45,8 @@
             <input type="button" id="clearLog" value="effacer le log"/>
             </div>
             <div class="clear"></div>
-            <h2>Articles2</h2>
-            <p><select name="Produit" id="Produits" size="8"></select></p>
+            <h2>Articles</h2>
+            <p><select name="Produit" id="Produits"></select></p>
             <p><input type="button" value="Ajouter" onClick=""/></p>
             <h2>Commande</h2>
             <table>
@@ -79,13 +79,10 @@
 		  	$('.sigPad').signaturePad({drawOnly:true,bgColour:'#fff',lineColour:'#fff',penColor:'#145394',penWidth:2});
 		  	dao.initialize(function() {
 				console.log('database initialized');
+				Synchronise();
 			});
 			$('#sync').on('click', function() {
-				if (bConnected==true) {
-					dao.sync(renderList);
-					renderList();
-				} else {
-				}
+				Synchronise();
 			});
 			
 			/*$('#render').on('click', function() {
@@ -97,6 +94,13 @@
 			});
 
 		});
+		function Synchronise() {
+			if (bConnected==true) {
+				dao.sync(renderList);
+				renderList();
+			} else {
+			}
+		}
 		function DelSignature() {
 			var api = $('.sigPad').signaturePad();
 			api.clearCanvas();
