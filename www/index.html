@@ -81,8 +81,11 @@
 				console.log('database initialized');
 			});
 			$('#sync').on('click', function() {
-				dao.sync(renderList);
-				renderList();
+				if (bConnected==true) {
+					dao.sync(renderList);
+					renderList();
+				} else {
+				}
 			});
 			
 			/*$('#render').on('click', function() {

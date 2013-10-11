@@ -1,3 +1,4 @@
+var bConnected=false;
 var app = {
     initialize: function() {
         this.bindEvents();
@@ -50,9 +51,11 @@ function check_network() {
     states[Connection.NONE]     = 'Non connecté';
     $('#cnType').html(states[networkState]);
 	if (states[networkState]=='Non connecté') {
+		bConnected=false;
 		$('#cnType').removeClass('vert');
 		$('#cnType').addClass('rouge');
 	} else {
+		bConnected=true;
 		$('#cnType').removeClass('rouge');
 		$('#cnType').addClass('vert');
 	}
