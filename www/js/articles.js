@@ -84,9 +84,9 @@ window.dao =  {
                             i = 0;
                         for (; i < len; i = i + 1) {
                             articles[i] = results.rows.item(i);
-            var article = articles[i];
+/*            var article = articles[i];
             $('#Produits').append(
-                '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
+                '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');*/
                         }
                         log(len + ' rows found');
                         callback(articles);
@@ -190,9 +190,12 @@ function renderList(articles) {
         var l = articles.length;
         for (var i = 0; i < l; i++) {
             var article = articles[i];
-            $('#Produits').append(
-                '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
-				log('<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
+			var options = $('#Produits').attr('options');
+			options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num, true, true);
+
+//            $('#Produits').append(
+  //              '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
+	//			log('<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
         }
     });
 }
