@@ -25,9 +25,11 @@ var app = {
 			break;
 		case 'offline':
 			check_network();
+			$('#sync').attr('enabled',false);
 			break;
 		case 'online':
 			check_network();
+			$('#sync').attr('enabled',true);
 			break;
 		}
     }

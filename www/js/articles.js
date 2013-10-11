@@ -30,15 +30,6 @@ window.dao =  {
     createTable: function(callback) {
         this.db.transaction(
             function(tx) {
-/*                var sql =
-                    "CREATE TABLE IF NOT EXISTS articles ( " +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "firstName VARCHAR(50), " +
-                    "lastName VARCHAR(50), " +
-                    "title VARCHAR(50), " +
-                    "officePhone VARCHAR(50), " +
-                    "deleted INTEGER, " +
-                    "lastModified VARCHAR(50))";*/
 					
 				var sql = 
 				"CREATE TABLE IF NOT EXISTS Articles (" +
@@ -84,9 +75,6 @@ window.dao =  {
                             i = 0;
                         for (; i < len; i = i + 1) {
                             articles[i] = results.rows.item(i);
-/*            var article = articles[i];
-            $('#Produits').append(
-                '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');*/
                         }
                         log(len + ' rows found');
                         callback(articles);
@@ -198,12 +186,9 @@ function renderList(articles) {
         var l = articles.length;
         for (var i = 0; i < l; i++) {
             var article = articles[i];
-			
-			options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num);
-
-//            $('#Produits').append(
-  //              '<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
-	//			log('<option value="' + article.Num + '">' + article.Id + ' - ' + article.Description + '</option>');
+			if (article.bDel==0) {
+				options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num);
+			}
         }
     });
 }
