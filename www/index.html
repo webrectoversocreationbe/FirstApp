@@ -46,7 +46,7 @@
             </div>
             <div class="clear"></div>
             <h2>Articles</h2>
-            <p><select name="Produit" id="Produits"><option value="dsf">test</option></select></p>
+            <p><select name="Produit" id="Produits" size="8"></select></p>
             <p><input type="button" value="Ajouter" onClick=""/></p>
             <h2>Commande</h2>
             <table>
@@ -81,6 +81,9 @@
 				console.log('database initialized');
 			});
 			$('#sync').on('click', function() {
+				dao.dropTable(function() {
+				   dao.createTable();
+				});
 				dao.sync(renderList);
 				renderList();
 			});
