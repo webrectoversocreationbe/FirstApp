@@ -79,7 +79,6 @@
 		  	$('.sigPad').signaturePad({drawOnly:true,bgColour:'#fff',lineColour:'#fff',penColor:'#145394',penWidth:2});
 		  	dao.initialize(function() {
 				console.log('database initialized');
-				Synchronise();
 			});
 			$('#sync').on('click', function() {
 				Synchronise();
@@ -92,7 +91,9 @@
 			$('#clearLog').on('click', function() {
 				$('#log').val('');
 			});
-
+				
+			Synchronise();
+				
 		});
 		function Synchronise() {
 			if (bConnected==true) {

@@ -187,7 +187,7 @@ function renderList(articles) {
         for (var i = 0; i < l; i++) {
             var article = articles[i];
 			if (article.bDel==0) {
-				options[options.length] = new Option(article.Id + ' - ' + article.Description, article.Num);
+				options[options.length] = new Option(article.Id + ' - ' + article.Description + ' - ' + article.Prix + ' €', article.Num);
 			}
         }
     });
