@@ -81,9 +81,6 @@
 				console.log('database initialized');
 			});
 			$('#sync').on('click', function() {
-				dao.dropTable(function() {
-				   dao.createTable();
-				});
 				dao.sync(renderList);
 				renderList();
 			});
