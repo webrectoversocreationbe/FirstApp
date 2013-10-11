@@ -1,11 +1,10 @@
 window.dao =  {
 
-    syncURL: "http://www.universducuir.be/DelaiFou/syncArticles.php",
+    syncURL: "http://www.devba.be/android/syncArticles.php",
 
     initialize: function(callback) {
         var self = this;
         this.db = window.openDatabase("syncdemodb", "1.0", "Sync Demo DB", 200000);
-		alert('ici');
 
         // Testing if the table exists is not needed and is here for logging purpose only. We can invoke createTable
         // no matter what. The 'IF NOT EXISTS' clause will make sure the CREATE statement is issued only if the table
@@ -110,7 +109,6 @@ window.dao =  {
     },
 
     sync: function(callback) {
-
         var self = this;
         log('Starting synchronization...');
         this.getLastSync(function(lastSync){
@@ -138,8 +136,8 @@ window.dao =  {
                 log("The server returned " + data.length + " changes that occurred after " + modifiedSince);
                 callback(data);
             },
-            error: function(model, response) {
-                alert(response.responseText);
+            error: function(request, model, response) {
+                alert(request.responseText + " " +model + " " + response);
             }
         });
 
@@ -174,9 +172,6 @@ window.dao =  {
     }
 };
 
-dao.initialize(function() {
-    console.log('database initialized');
-});
 
 /*$('#reset').on('click', function() {
     dao.dropTable(function() {
@@ -184,19 +179,6 @@ dao.initialize(function() {
     });
 });*/
 
-
-$('#sync').on('click', function() {
-    dao.sync(renderList);
-    renderList();
-});
-
-/*$('#render').on('click', function() {
-    renderList();
-});*/
-
-$('#clearLog').on('click', function() {
-    $('#log').val('');
-});
 
 function renderList(articles) {
     log('Rendering list using local SQLite data...');

@@ -39,10 +39,10 @@
             <p><label for="Ville">Ville :</label><br/><input type="text" name="Ville" id="Ville" required/></p>
             </div>
             <div class="floatleft ML20">
-            <div id="log">
-            <textarea id="log" style="width:99%" rows="5" cols="40"></textarea>
+            <div id="lelog">
+            <textarea id="log" style="width:99%" rows="15" cols="140"></textarea>
             </div>
-            <input type="button" id="clearlog" value="effacer le log"/>
+            <input type="button" id="clearLog" value="effacer le log"/>
             </div>
             <div class="clear"></div>
             <h2>Articles</h2>
@@ -76,7 +76,23 @@
     </div>
     <script>
 		$(document).ready(function () {
-		  $('.sigPad').signaturePad({drawOnly:true,bgColour:'#fff',lineColour:'#fff',penColor:'#145394',penWidth:2});
+		  	$('.sigPad').signaturePad({drawOnly:true,bgColour:'#fff',lineColour:'#fff',penColor:'#145394',penWidth:2});
+		  	dao.initialize(function() {
+				console.log('database initialized');
+			});
+			$('#sync').on('click', function() {
+				dao.sync(renderList);
+				renderList();
+			});
+			
+			/*$('#render').on('click', function() {
+				renderList();
+			});*/
+			
+			$('#clearLog').on('click', function() {
+				$('#log').val('');
+			});
+
 		});
 		function DelSignature() {
 			var api = $('.sigPad').signaturePad();
